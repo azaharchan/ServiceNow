@@ -1,0 +1,43 @@
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == '') {
+        g_form.setDisplay('colour', false);
+        g_form.setDisplay('model', false);
+        g_form.setDisplay('storage', false);
+        g_form.setDisplay('colour_i', false);
+        g_form.setDisplay('storage_i', false);
+        g_form.setDisplay('model_i', false);
+    }
+    var brand = g_form.getValue('brand');
+    if (brand == 'apple') {
+        g_form.setMandatory('model', true);
+        g_form.setDisplay('model', true);
+        g_form.setMandatory('colour', true);
+        g_form.setDisplay('colour', true);
+        g_form.setMandatory('storage', true);
+        g_form.setDisplay('storage', true);
+    } else {
+        g_form.setMandatory('model', false);
+        g_form.setDisplay('model', false);
+        g_form.setMandatory('colour', false);
+        g_form.setDisplay('colour', false);
+        g_form.setMandatory('storage', false);
+        g_form.setDisplay('storage', false);
+    }
+    if (brand == 'samsung') {
+        g_form.setMandatory('model_i', true);
+        g_form.setDisplay('model_i', true);
+        g_form.setMandatory('colour_i', true);
+        g_form.setDisplay('colour_i', true);
+        g_form.setMandatory('storage_i', true);
+        g_form.setDisplay('storage_i', true);
+    } else {
+        g_form.setMandatory('model_i', false);
+        g_form.setDisplay('model_i', false);
+        g_form.setMandatory('colour_i', false);
+        g_form.setDisplay('colour_i', false);
+        g_form.setMandatory('storage_i', false);
+        g_form.setDisplay('storage_i', false);
+    }
+
+
+}
